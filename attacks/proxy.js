@@ -7,8 +7,8 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     var url = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all"
-    const file = fs.createWriteStream("socks4.txt")
-    fs.writeFileSync('socks4.txt', ' ');
+    const file = fs.createWriteStream("socks_proxies.txt")
+    fs.writeFileSync('socks_proxies.txt', ' ');
     const request = https.get(url, function(response) {
         response.pipe(file)
     });
